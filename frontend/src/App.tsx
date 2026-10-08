@@ -3,6 +3,8 @@ import logo from './logo.svg';
 import Home from './Home/Home';
 import Products from './Products/Products';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Orders from "./Orders/Orders";
+import OrderDetail from "./Orders/OrderDetail";
 //import './App.css';
 
 function App() {
@@ -37,10 +39,15 @@ function App() {
 <li>
     <a href="/products">Shirts</a>
 </li>
+<li>
+    <a href="/orders">Orders</a>
+</li>
             </aside>
            <Routes>
   <Route path="/" element={<Home />} />
   <Route path="/products" element={<Products />} />
+  <Route path="/orders" element={<Orders />} />
+  <Route path="/orders/:id" element={<OrderDetail />} />
 </Routes>
         </main>
         <footer className = "footer">

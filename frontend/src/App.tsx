@@ -1,5 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
+import Home from './Home/Home';
+import Products from './Products/Products';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 //import './App.css';
 
 function App() {
@@ -14,7 +17,7 @@ function App() {
         <header className = "header">
             <div className = "brand">
                 <button onClick={openMenu}>&#9776;</button>
-                <a href = "index.html">Team 6 ACCTMIS 4630</a>
+                <a href="/">Team 6 ACCTMIS 4630</a>
             </div>
             <div className = "header-links">
                 <a href = "cart.html">Cart</a>
@@ -28,86 +31,17 @@ function App() {
                 <button className = "sidebar-close-button" onClick = {closeMenu}>
                   x
                 </button>
-                <ul>
-                    <li>
-                        <a href = "index.html">Pants</a>
-                    </li>
-
-                    <li>
-                        <a href = "index.html">Shirts</a>
-                    </li>
-                </ul>
+                <li>
+    <a href="/products">Pants</a>
+</li>
+<li>
+    <a href="/products">Shirts</a>
+</li>
             </aside>
-            <div className = "content">
-                <ul className = "products">
-                    <li>
-                        <div className = "product">
-                            <img className = "product-image" src="images/d1.jpg" alt="product" />
-                            <div className = "product-name">
-                                <a href = "product.html">Slim Shirt</a>
-                            </div>
-                            <div className = "product-brand">Nike</div>
-                            <div className = "product-price">$60</div>
-                            <div className = "product-rating">4.5 Stars (10 Reviews)</div>
-                        </div>
-                    </li>
-                    <li>
-                        <div className = "product">
-                            <img className = "product-image" src="images/d1.jpg" alt="product" />
-                            <div className = "product-name">
-                                <a href = "product.html">Slim Shirt</a>
-                            </div>
-                            <div className = "product-brand">Nike</div>
-                            <div className = "product-price">$60</div>
-                            <div className = "product-rating">4.5 Stars (10 Reviews)</div>
-                        </div>
-                    </li>
-                    <li>
-                        <div className = "product">
-                            <img className = "product-image" src="images/d1.jpg" alt="product" />
-                            <div className = "product-name">
-                                <a href = "product.html">Slim Shirt</a>
-                            </div>
-                            <div className = "product-brand">Nike</div>
-                            <div className = "product-price">$60</div>
-                            <div className = "product-rating">4.5 Stars (10 Reviews)</div>
-                        </div>
-                    </li>
-                    <li>
-                        <div className = "product">
-                            <img className = "product-image" src="images/d1.jpg" alt="product" />
-                            <div className = "product-name">
-                                <a href = "product.html">Slim Shirt</a>
-                            </div>
-                            <div className = "product-brand">Nike</div>
-                            <div className = "product-price">$60</div>
-                            <div className = "product-rating">4.5 Stars (10 Reviews)</div>
-                        </div>
-                    </li>
-                    <li>
-                        <div className = "product">
-                            <img className = "product-image" src="images/d1.jpg" alt="product" />
-                            <div className = "product-name">
-                                <a href = "product.html">Slim Shirt</a>
-                            </div>
-                            <div className = "product-brand">Nike</div>
-                            <div className = "product-price">$60</div>
-                            <div className = "product-rating">4.5 Stars (10 Reviews)</div>
-                        </div>
-                    </li>
-                    <li>
-                        <div className = "product">
-                            <img className = "product-image" src="images/d1.jpg" alt="product" />
-                            <div className = "product-name">
-                                <a href = "product.html">Slim Shirt</a>
-                            </div>
-                            <div className = "product-brand">Nike</div>
-                            <div className = "product-price">$60</div>
-                            <div className = "product-rating">4.5 Stars (10 Reviews)</div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+           <Routes>
+  <Route path="/" element={<Home />} />
+  <Route path="/products" element={<Products />} />
+</Routes>
         </main>
         <footer className = "footer">
             &copy; 2022 Team 6 ACCTMIS 4630 
@@ -116,4 +50,10 @@ function App() {
   );
 }
 
-export default App;
+export default function AppWithRouter() {
+  return (
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  );
+}

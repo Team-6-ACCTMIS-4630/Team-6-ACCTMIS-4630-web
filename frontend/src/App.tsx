@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Orders from "./Orders/Orders";
 import OrderDetail from "./Orders/OrderDetail";
 import PaymentScreen from './Payment/Payment';
+import Fulfillment from './Fulfillment/Fulfillment'
 //import './App.css';
 
 function App() {
@@ -44,12 +45,16 @@ function App() {
 <li>
     <a href="/orders">Orders</a>
 </li>
+<li>
+  <a href = "/fulfillment">Fulfillment</a>
+</li>
             </aside>
 
   <Routes>
     <Route path="/" element={<Home />} />
     <Route path="/products" element={<Products />} />
     <Route path="/orders" element={<Orders />} />
+    <Route path="/fulfillment" element = {<Fulfillment />}/>
     <Route path="/orders/:id" element={<OrderDetail />} />
     <Route path = "/payment" element= {<PaymentScreen />} />
   </Routes>
@@ -68,3 +73,4 @@ export default function AppWithRouter() {
     </BrowserRouter>
   );
 }
+

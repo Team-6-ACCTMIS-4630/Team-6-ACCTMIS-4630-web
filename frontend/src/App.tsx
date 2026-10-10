@@ -5,6 +5,7 @@ import Products from './Products/Products';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Orders from "./Orders/Orders";
 import OrderDetail from "./Orders/OrderDetail";
+import PaymentScreen from './Payment/Payment';
 //import './App.css';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
             <div className = "header-links">
                 <a href = "cart.html">Cart</a>
                 <a href = "signin.html">Sign In</a>
+                <a href = "/payment">Payment</a>
             </div>
         </header>
 
@@ -43,12 +45,14 @@ function App() {
     <a href="/orders">Orders</a>
 </li>
             </aside>
-           <Routes>
-  <Route path="/" element={<Home />} />
-  <Route path="/products" element={<Products />} />
-  <Route path="/orders" element={<Orders />} />
-  <Route path="/orders/:id" element={<OrderDetail />} />
-</Routes>
+
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/products" element={<Products />} />
+    <Route path="/orders" element={<Orders />} />
+    <Route path="/orders/:id" element={<OrderDetail />} />
+    <Route path = "/payment" element= {<PaymentScreen />} />
+  </Routes>
         </main>
         <footer className = "footer">
             &copy; 2022 Team 6 ACCTMIS 4630 
